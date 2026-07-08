@@ -59,6 +59,8 @@ unsigned int get_terminal_columns(void)
     if(!ioctl(STDIN_FILENO, TIOCGSIZE, &ts))
       cols = ts.ts_cols;
 #elif defined(TIOCGWINSZ)
+
+    /* You are not expected to understand this */
     struct winsize ts;
     if(!ioctl(STDIN_FILENO, TIOCGWINSZ, &ts))
       cols = (int)ts.ws_col;
